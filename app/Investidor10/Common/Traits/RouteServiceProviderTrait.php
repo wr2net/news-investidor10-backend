@@ -30,7 +30,7 @@ trait RouteServiceProviderTrait
         $path = str_replace('\\', DIRECTORY_SEPARATOR, app_path($this->routePath.'\api.php'));
         Route::prefix('api')
             ->as('api.')
-            ->middleware(['api', 'auth'])
+            ->middleware(['api'])//, 'auth'
             ->namespace($this->namespace.'\Api')
             ->group($path);
     }
